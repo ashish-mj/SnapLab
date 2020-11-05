@@ -1,0 +1,65 @@
+.features{
+background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/black.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+.button{
+background-color: #55075b;
+border: 1px solid #55075b;
+color: #fff;
+font-size: 16px;
+padding: 15px 20px;
+border-radius: 5%;
+margin-bottom: 25px;
+width : 150px;
+}
+
+.button:hover,
+.button:active{
+    background-color: #6b0091;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.59);
+}
+.button-box-1,.button-box-2{
+margin-top: 50px;
+}
+.button-box-1{
+margin-left: -20px;
+}
+.button-box-2{
+margin-left: 50px;
+}
+
+.video-box{
+    width:100%;
+    height: 90vh;
+    background-color: white;
+    margin-top: -10px;
+}
+.videoElement{
+ width:100%;
+height: 80vh;
+object-fit: cover;
+}
+.capture,.clear,.download{
+ background-color: #55075b;
+border: 1px solid #55075b;
+color: #fff;
+border-radius: 25%;
+font-size: 16px;
+padding: 16px;
+width: 80%;
+margin-top: -5px;
+margin-left: 22px;
+}
+
+.capture:hover,
+.capture:active,
+.download:hover,
+.download:active,
+.clear:hover,
+.clear:active{
+    background-color: #6b0091;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.59);
+}

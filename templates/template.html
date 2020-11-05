@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SnapLab</title>
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/ionicons.min.css">
+    <link rel="stylesheet" href="../static/css/template.css">
+    <link rel="icon" href="../static/images/logo.png" type="image/jpg">
+    {%block head%}
+    
+    {%endblock%}
+</head>
+  <body>
+    <header>
+        <nav class="row">
+            <img src="../static/images/logo.png" alt="SnapLab  logo" class="logo">
+            <ul class="main-nav">
+                <li>
+                    <a href="{{url_for('filters')}}">FILTERS</a>
+                </li>
+                <li>
+                    <a href="{{url_for('effects')}}">EFFECTS</a>
+                </li>
+                <li>
+                    <a href="{{url_for('compress')}}">COMPRESS</a>
+                </li>
+                <li>
+                    <a href="{{url_for('edit')}}">EDIT</a>
+                </li>
+                <li>
+                    <a href="{{url_for('about')}}">ABOUT</a>
+                </li>
+                <li>
+                    <a href="{{url_for('home')}}">HOME</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+      
+      {% block content%}
+      
+      
+      {% endblock %}
+      <footer class="footer-section">
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li >
+                        <a href="{{url_for('home')}}">HOME</a>
+                    </li>
+                    <li>
+                    <a href="{{url_for('about')}}">ABOUT</a>
+                </li>
+                    <li>
+                        <a href="{{url_for('edit')}}">EDIT</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('compress')}}">COMPRESS</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('effects')}}">EFFECTS</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('filters')}}">FILTERS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2 ">
+                <ul class="social-links">
+                    <li>
+                        <a href="#"><i class="ion-social-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ion-social-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p class="footer-copy-text">2020 &copy; SnapLab. All rights reserved<br></p>
+        </div>
+        <div class="names">
+            <ul>
+                <li>Aditya Sumanth</li>
+                <li>Akshay Dhage</li>
+                <li>Ashish M J</li>
+                <li>Pavan Hatwar</li>
+            </ul>
+        </div>
+        
+    </footer>
+    
+</body>    
+    
+</html>

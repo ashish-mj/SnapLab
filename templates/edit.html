@@ -1,0 +1,195 @@
+{% extends 'template.html'%}
+{%block head%}
+  <link rel="stylesheet" href="../static/css/edit.css">
+{%endblock%}
+
+{%block content%}
+<section class='features'>
+ <div class="box">
+   <div class="row">
+    <div class="col span-2-of-5">
+      <div class='image'>
+          <img src={{image_filename}} alt="uploaded image" class='up_img' id="up_img">
+      </div>
+  </div>
+  <div class="col span-3-of-5">
+        <form class="img_upload" action="{{url_for('edit')}}" method="post" enctype="multipart/form-data" >
+        <div class="col span-1-of-2">
+        <label for="Brightness"><strong>BRIGHTNESS</strong></label>
+        <br>
+        <input type="range" id="brightness" name="brightness" min="-150" max="150" step="25" value="{{brightness_value}}">
+        <br>
+        <label for="Contrast"><strong>CONTRAST</strong></label>
+        <br>
+        <input type="range" id="Contrast" name="Contrast" min="0.1" max="1.9" step="0.1" value="{{contrast_value}}">
+        <br>
+            <label for="Blur"><strong>BLUR</strong></label>
+        <br>
+        <input type="range" id="Blur" name="Blur" min="1" max="11" step="2" value="{{blur_value}}">
+            
+            
+            <p><strong>SHARPNESS</strong></p>
+        {%if sharp_value=='max'%}
+        <input type="radio" id="max" name="type" value="max" checked>
+        <label for="max">Max</label>
+       <input type="radio" id="min" name="type" value="min">
+       <label for="min">Min</label> 
+        <input type="radio" id="none" name="type" value="none">
+       <label for="none">None</label>
+        {%elif sharp_value=='min'%}
+        <input type="radio" id="max" name="type" value="max">
+        <label for="max">Max</label>
+       <input type="radio" id="min" name="type" value="min" checked>
+       <label for="min">Min</label> 
+        <input type="radio" id="none" name="type" value="none">
+       <label for="none">None</label>
+        {%else%}
+        <input type="radio" id="max" name="type" value="max">
+        <label for="max">Max</label>
+       <input type="radio" id="min" name="type" value="min">
+       <label for="min">Min</label> 
+        <input type="radio" id="none" name="type" value="none" checked>
+       <label for="none">None</label>
+        {%endif%}
+         
+        <p><strong>DENOISE</strong></p>
+        {%if denoise_value=='min'%}
+        <input type="radio" id="min" name="type3" value="min" checked>
+       <label for="min">Min</label>
+       <input type="radio" id="mid" name="type3" value="mid">
+       <label for="mid">Mid</label>
+       <input type="radio" id="max" name="type3" value="max">
+       <label for="max">Max</label>
+        <input type="radio" id="none" name="type3" value="none" >
+       <label for="none">None</label>    
+        {%elif denoise_value=='mid'%}
+        <input type="radio" id="min" name="type3" value="min" >
+       <label for="min">Min</label>
+       <input type="radio" id="mid" name="type3" value="mid" checked>
+       <label for="mid">Mid</label>
+       <input type="radio" id="max" name="type3" value="max">
+       <label for="max">Max</label>
+        <input type="radio" id="none" name="type3" value="none" >
+       <label for="none">None</label> 
+        {%elif denoise_value=='max'%}
+        <input type="radio" id="min" name="type3" value="min" >
+       <label for="min">Min</label>
+       <input type="radio" id="mid" name="type3" value="mid" >
+       <label for="mid">Mid</label>
+       <input type="radio" id="max" name="type3" value="max" checked>
+       <label for="max">Max</label>
+        <input type="radio" id="none" name="type3" value="none" >
+       <label for="none">None</label>
+        {%else%}
+        <input type="radio" id="min" name="type3" value="min" >
+       <label for="min">Min</label>
+       <input type="radio" id="mid" name="type3" value="mid" >
+       <label for="mid">Mid</label>
+       <input type="radio" id="max" name="type3" value="max" >
+       <label for="max">Max</label>
+        <input type="radio" id="none" name="type3" value="none" checked>
+       <label for="none">None</label>
+        {%endif%}
+            
+            
+        <p><strong>ROTATE</strong></p>
+         {%if rotate_value=='90'%}   
+        <input type="radio" id="ninety" name="type1" value="90" checked>
+        <label for="ninety">90&#176;</label>
+       <input type="radio" id="one_eighty" name="type1" value="180">
+       <label for="one_eighty">180&#176;</label>
+        <input type="radio" id="two_seventy" name="type1" value="270">
+       <label for="two_seventy">270&#176;</label>
+        <input type="radio" id="none" name="type1" value="none">
+       <label for="none">None</label>
+        {%elif rotate_value=='180'%}
+        <input type="radio" id="ninety" name="type1" value="90" >
+        <label for="ninety">90&#176;</label>
+       <input type="radio" id="one_eighty" name="type1" value="180" checked>
+       <label for="one_eighty">180&#176;</label>
+        <input type="radio" id="two_seventy" name="type1" value="270">
+       <label for="two_seventy">270&#176;</label>
+        <input type="radio" id="none" name="type1" value="none">
+       <label for="none">None</label>
+        {%elif rotate_value=='270'%}
+        <input type="radio" id="ninety" name="type1" value="90" >
+        <label for="ninety">90&#176;</label>
+       <input type="radio" id="one_eighty" name="type1" value="180">
+       <label for="one_eighty">180&#176;</label>
+        <input type="radio" id="two_seventy" name="type1" value="270" checked>
+       <label for="two_seventy">270&#176;</label>
+        <input type="radio" id="none" name="type1" value="none">
+       <label for="none">None</label>
+        {%else%}
+        <input type="radio" id="ninety" name="type1" value="90" >
+        <label for="ninety">90&#176;</label>
+       <input type="radio" id="one_eighty" name="type1" value="180">
+       <label for="one_eighty">180&#176;</label>
+        <input type="radio" id="two_seventy" name="type1" value="270" >
+       <label for="two_seventy">270&#176;</label>
+        <input type="radio" id="none" name="type1" value="none" checked>
+       <label for="none">None</label>
+        {%endif%}
+            
+            
+        <p><strong>RESIZE</strong></p>
+        {%if resize_value=='25'%}
+        <input type="radio" id="twenty" name="type2" value="25" checked>
+        <label for="twenty">25&#37;</label>
+       <input type="radio" id="fifty" name="type2" value="50">
+        <label for="fifty">50&#37;</label>
+        <input type="radio" id="seventy" name="type2" value="75">
+       <label for="seventy">75&#37;</label>
+        <input type="radio" id="none" name="type2" value="none">
+       <label for="none">None</label>
+        {%elif resize_value=='50'%}
+        <input type="radio" id="twenty" name="type2" value="25" >
+        <label for="twenty">25&#37;</label>
+       <input type="radio" id="fifty" name="type2" value="50" checked>
+        <label for="fifty">50&#37;</label>
+        <input type="radio" id="seventy" name="type2" value="75">
+       <label for="seventy">75&#37;</label>
+        <input type="radio" id="none" name="type2" value="none">
+       <label for="none">None</label>
+        {%elif resize_value=='75'%}
+        <input type="radio" id="twenty" name="type2" value="25" >
+        <label for="twenty">25&#37;</label>
+       <input type="radio" id="fifty" name="type2" value="50" >
+        <label for="fifty">50&#37;</label>
+        <input type="radio" id="seventy" name="type2" value="75" checked>
+       <label for="seventy">75&#37;</label>
+        <input type="radio" id="none" name="type2" value="none">
+       <label for="none">None</label>
+        {%else%}
+        <input type="radio" id="twenty" name="type2" value="25" >
+        <label for="twenty">25&#37;</label>
+       <input type="radio" id="fifty" name="type2" value="50" >
+        <label for="fifty">50&#37;</label>
+        <input type="radio" id="seventy" name="type2" value="75" >
+       <label for="seventy">75&#37;</label>
+        <input type="radio" id="none" name="type2" value="none" checked>
+       <label for="none">None</label>
+        {%endif%}
+            
+        </div>
+        <div class="col span-1-of-2">
+        <div class="field">
+        <input type="text" name="path" placeholder="Image URL"  pattern="^.*\.(jpg|JPG|jpeg|JPEG|png|PNG)$" >
+       <input type="submit" name="button" value='Upload' class="upload">
+       <h3>OR</h3>
+       <input type='file' name="local_file"   accept=".jpeg,.jpg,.png" id="local_file"/>
+       <input type="submit" name="button" value='Upload' class="upload">
+       <br/>
+       {% for mess in get_flashed_messages() %}
+        <h5>{{mess}}</h5>
+        {% endfor %}
+       <input type='submit' name="button" value='Apply' class="apply">
+       <input type='submit' name="button" value='Download' class="download">
+            </div>
+            </div>
+       </form>
+       </div>
+   </div>       
+</div>
+</section>
+{%endblock%}

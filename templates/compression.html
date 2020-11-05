@@ -1,0 +1,41 @@
+{% extends 'template.html'%}
+{%block head%}
+  <link rel="stylesheet" href="../static/css/compression.css">
+{%endblock%}
+
+{%block content%}
+
+<section class='features'>
+<div class="box">
+<div class="row">
+  <div class="col span-1-of-2">
+      <div class='image'>
+          <img src={{image_filename}} alt="uploaded image" class='up_img' id="up_img">
+      </div>
+  </div>
+   <div class="col span-1-of-2">
+       <form class="img_upload" action="{{url_for('compress')}}" method="post" enctype="multipart/form-data" > 
+       <input type="text" name="path" placeholder="Image URL"  pattern="^.*\.(jpg|JPG|jpeg|JPEG|png|PNG)$" >
+       <input type="submit" name="button" value='Upload' class="upload">
+       <h3>OR</h3>
+       <input type='file' name="local_file" accept=".jpeg,.jpg,.png"  id="local_file"/>
+       <input type="submit" name="button" value='Upload' class="upload">
+       <br/>
+       <input type="radio" id="max" name="type" value="max">
+       <label for="max">Max</label>
+       <input type="radio" id="mid" name="type" value="mid">
+       <label for="mid">Mid</label>
+       <input type="radio" id="min" name="type" value="min" checked="checked">
+       <label for="min">Min</label>
+        {% for mess in get_flashed_messages() %}
+        <h5>{{mess}}</h5>
+        {% endfor %}
+       <input type='submit' name="button" value='Compress' class="compress"  >
+       </form>
+    </div> 
+    </div>
+</div>
+</section>
+
+
+{%endblock%}

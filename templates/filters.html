@@ -1,0 +1,57 @@
+{% extends 'template.html'%}
+{%block head%}
+  <link rel="stylesheet" href="../static/css/filters.css">
+{%endblock%}
+
+{%block content%}
+<section class='features'>
+ <div class="box">
+   <div class="row">
+       <form class="img_upload" action="{{url_for('filters')}}" method="post" enctype="multipart/form-data" >
+       <div class="col span-1-of-6">
+        <div class="button-box-1">
+        <input type="submit" name="button" value='Hind' class="button" >
+        <input type="submit" name="button" value='Handlebar' class="button">
+        <input type="submit" name="button" value='Flora' class="button">
+        <input type="submit" name="button" value='Bella' class="button">
+        <input type="submit" name="button" value='Tilak' class="button">
+        <input type="submit" name="button" value='Thug' class="button">   
+        </div>   
+       </div>       
+       <div class="col span-4-of-6">
+       <div class="video-box">
+       <div class="video">
+       {%if img_filename %}
+       <img src={{img_filename}} class="videoElement" alt="Not Found">
+       {%else%}
+       <img src="{{url_for('video')}}" class="videoElement">
+       {%endif%}
+       <div class="row">
+       <div class="col span-1-of-3">
+       <input type="submit" alt='clear' name="button"  value="Clear"   class="clear">
+        </div>
+        <div class="col span-1-of-3">
+        <input type="submit" alt='capture' name="button" value="Capture"   class="capture" >
+        </div>
+        <div class="col span-1-of-3">
+        <input type="submit" alt='download' name="button" value="Download"  class="download" >
+        </div>
+        </div>
+        </div>
+        </div>
+       </div>    
+        <div class="col span-1-of-6">
+        <div class="button-box-2">
+        <input type="submit" name="button" value='Lido' class="button" >
+        <input type="submit" name="button" value='Polychrome' class="button">
+        <input type="submit" name="button" value='Visor' class="button">
+        <input type="submit" name="button" value='MI' class="button">
+        <input type="submit" name="button" value='RCB' class="button">
+        <input type="submit" name="button" value='Nags' class="button">
+       </div>
+     </div>
+    </form>
+ </div>       
+ </div>
+</section>
+{%endblock%}

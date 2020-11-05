@@ -1,0 +1,134 @@
+/********************basic setup****/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial' ,sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+
+}
+.clearfix{zoom:1}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/*******************************************/
+.row{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+header{
+    background-color: white;
+    color: black;
+}
+/******************navigation bar*******/
+.logo{
+    height: 50px;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+.main-nav li{
+    float: right;
+    list-style: none;
+    margin-left: 40px;
+    margin-top: 25px;
+   }
+.main-nav li a:link,
+.main-nav li a:visited{
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 8px 0;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid  #55075b;
+    transition: .1s;
+}
+ 
+
+/********************footer***********/
+footer{
+    background-color: #333;
+    padding: 5px;
+    font-size: 80%;
+    color: #888;
+}
+
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+.social-links li a:link,
+.social-links li a:visited,
+.footer-nav li a:link,
+.footer-nav li a:visited{
+    text-decoration: none;
+    color: #888;
+    border: 0;
+    transition: color 0.2s;
+    }
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: white;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 5px;
+}
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
+}
+.ion-social-facebook,
+.ion-social-instagram{
+    transition: color 0.2s;
+}
+.ion-social-facebook:hover{
+    color:#3b5998;
+}
+.ion-social-instagram:hover{
+    color: #e1306c;
+}
+.names{
+    padding-left: 370px;
+}
+.names li{
+ list-style: none;
+    margin-left: 40px;
+    margin-top: 55px;
+    display: inline;
+    color: #888;
+}

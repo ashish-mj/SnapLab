@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+h1{
+    margin: 0;
+    color: #fff;
+    font-size: 240%;
+    font-weight: 300;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial' ,sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    
+}
+/*home page */
+header{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url(../images/hom.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.hero-text-box{
+   position: absolute;
+   width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 40px;
+}  
+.logo{
+    float: left;
+    height: 10%;
+    width: 10%;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.main-nav li{
+    float: right;
+    list-style: none;
+    margin-left: 40px;
+    margin-top: 45px;
+   }
+.main-nav li a:link,
+.main-nav li a:visited{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 8px 0;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #55075b;
+    transition: .1s;
+}
+ 
+
+
+/*******Footer*********************************/
+footer{
+    background-color: #333;
+    padding: 5px;
+    font-size: 80%;
+    color: #888;
+}
+
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+.social-links li a:link,
+.social-links li a:visited,
+.footer-nav li a:link,
+.footer-nav li a:visited{
+    text-decoration: none;
+    color: #888;
+    border: 0;
+    transition: color 0.2s;
+    }
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: white;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 5px;
+}
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
+}
+.ion-social-facebook,
+.ion-social-instagram{
+    transition: color 0.2s;
+}
+.ion-social-facebook:hover{
+    color:#3b5998;
+}
+.ion-social-instagram:hover{
+    color: #e1306c;
+}
+.names{
+    padding-left: 370px;
+}
+.names li{
+ list-style: none;
+    margin-left: 40px;
+    margin-top: 55px;
+    display: inline;
+    color: #888;
+}

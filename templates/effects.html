@@ -1,0 +1,56 @@
+{% extends 'template.html'%}
+{%block head%}
+  <link rel="stylesheet" href="../static/css/effects.css">
+{%endblock%}
+
+{%block content%}
+<section class='features'>
+ <div class="box">
+   <div class="row">
+    <div class="col span-2-of-5">
+      <div class='image'>
+          <img src={{image_filename}} alt="uploaded image" class='up_img' id="up_img">
+      </div>
+  </div>
+    <div class="col span-3-of-5">
+        <form class="img_upload" action="{{url_for('effects')}}" method="post" enctype="multipart/form-data" >
+        <div class="button-box">
+        <div class="col span-1-of-3">
+        <div class="col span-1-of-2">
+            <input type="submit" name="button" value='Oreo' class="button" >
+            <input type="submit" name="button" value='Alchemy' class="button">
+            <input type="submit" name="button" value='Unstable' class="button">
+            <input type="submit" name="button" value='Contour' class="button">
+            <input type="submit" name="button" value='Indus' class="button">
+            <input type="submit" name="button" value='Molecule' class="button">
+        </div>
+        <div class="col span-1-of-2">
+            <input type="submit" name="button" value='Mercury' class="button" >
+            <input type="submit" name="button" value='Wacko' class="button">
+            <input type="submit" name="button" value='Ore' class="button">
+            <input type="submit" name="button" value='Snicko' class="button">
+            <input type="submit" name="button" value='Spectra' class="button">
+            <input type="submit" name="button" value='Lynn' class="button">
+        </div>
+        </div>
+     </div>
+        <div class="field">
+        <div class="col span-2-of-3">
+         <input type="text" name="path" placeholder="Image URL"  pattern="^.*\.(jpg|JPG|jpeg|JPEG|png|PNG)$" >
+       <input type="submit" name="button" value='Upload' class="upload">
+       <h3>OR</h3>
+       <input type='file' name="local_file"   accept=".jpeg,.jpg,.png" id="local_file"/>
+       <input type="submit" name="button" value='Upload' class="upload">
+       <br/>
+       {% for mess in get_flashed_messages() %}
+        <h5>{{mess}}</h5>
+        {% endfor %} 
+       <input type='submit' name="button" value='Download' class="download">
+        </div>
+        </div>
+    </form> 
+   </div>
+   </div>
+ </div>
+</section>
+{%endblock%}
